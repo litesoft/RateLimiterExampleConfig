@@ -1,0 +1,51 @@
+---
+name: Info
+maxRequestsPerWindow: 2
+windowSecs: 1
+pathSelector: "equals:/info"
+---
+name: Authenticate
+maxRequestsPerWindow: 5
+windowSecs: 1
+pathSelector: "equals:/authenticate"
+---
+name: AuthToken
+maxRequestsPerWindow: 2
+windowSecs: 1
+pathSelector: "equals:/oauth/token"
+---
+name: AuthAuthorize
+maxRequestsPerWindow: 1
+windowSecs: 1
+pathSelector: "equals:/oauth/authorize"
+---
+name: LoginPage
+maxRequestsPerWindow: 3
+windowSecs: 3
+pathSelector: "equals:/login"
+---
+name: LoginResource
+maxRequestsPerWindow: 6
+windowSecs: 3
+pathSelector: "startsWith:/resources/"
+---
+name: LoginVendor
+maxRequestsPerWindow: 6
+windowSecs: 3
+pathSelector: "startsWith:/vendor/"
+---
+name: LoginDo
+maxRequestsPerWindow: 1
+windowSecs: 1
+pathSelector: "equals:/login.do"
+---
+name: PebblesBirthDate
+maxRequestsPerWindow: 1
+windowSecs: 3600
+pathSelector: "contains:1963/02/22"
+global: true
+---
+name: EverythingElse
+maxRequestsPerWindow: 50
+windowSecs: 1
+pathSelector: "any:"
