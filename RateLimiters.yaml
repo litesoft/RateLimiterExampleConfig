@@ -41,7 +41,7 @@ pathSelector: "equals:/login.do"
 ---
 name: PebblesBirthDate
 maxRequestsPerWindow: 1
-windowSecs: 3600
+windowSecs: 1800
 pathSelector: "contains:1963/02/22"
 global: true
 ---
