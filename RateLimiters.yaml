@@ -39,6 +39,9 @@ maxRequestsPerWindow: 1
 windowSecs: 1
 pathSelector: "equals:/login.do"
 ---
+name: LoginDoNot
+pathSelector: "equals:/login.donot"
+---
 name: PebblesBirthDate
 maxRequestsPerWindow: 1
 windowSecs: 1800
