@@ -39,15 +39,6 @@ maxRequestsPerWindow: 1
 windowSecs: 1
 pathSelector: "equals:/login.do"
 ---
-name: LoginDoNot
-pathSelector: "equals:/login.donot"
----
-name: PebblesBirthDate
-maxRequestsPerWindow: 1
-windowSecs: 1800
-pathSelector: "contains:1963/02/22"
-global: true
----
 name: EverythingElse
 maxRequestsPerWindow: 50
 windowSecs: 1
