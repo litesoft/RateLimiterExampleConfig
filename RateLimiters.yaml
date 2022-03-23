@@ -1,10 +1,10 @@
 ---
 name: Info
 pathSelector: "equals:/info"
-withCallID:
+withCallerID:
   maxRequestsPerWindow: 2
   windowSecs: 1
-withoutCallID:
+withoutCallerID:
   maxRequestsPerWindow: 4
   windowSecs: 1
 global:
