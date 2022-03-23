@@ -1,8 +1,15 @@
 ---
 name: Info
-maxRequestsPerWindow: 2
-windowSecs: 1
 pathSelector: "equals:/info"
+withCallID:
+  maxRequestsPerWindow: 2
+  windowSecs: 1
+withoutCallID:
+  maxRequestsPerWindow: 4
+  windowSecs: 1
+global:
+  maxRequestsPerWindow: 50
+  windowSecs: 1
 ---
 name: Authenticate
 maxRequestsPerWindow: 5
