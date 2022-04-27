@@ -1,64 +1,64 @@
 ---
 name: Info
-pathSelectors: 
-  - "equals:/info"
+global: 50r/s
 withCallerID: 2r/s
 withoutCallerID: 4r/s
-global: 50r/s
+pathSelectors: 
+  - "equals:/info"
 ---
 name: Authenticate
+global: 50r/s
 withCallerID: 5r/s
 withoutCallerID: 10r/s
-global: 50r/s
 pathSelectors: 
   - "equals:/authenticate"
 ---
 name: AuthToken
+global: 50r/s
 withCallerID: 2r/s
 withoutCallerID: 4r/s
-global: 50r/s
 pathSelectors: 
   - "equals:/oauth/token"
 ---
 name: AuthAuthorize
-maxRequestsPerWindow: 1
+global: 25r/s
 withCallerID: 1r/s
 withoutCallerID: 2r/s
-global: 25r/s
 pathSelectors: 
   - "equals:/oauth/authorize"
 ---
 name: LoginPage
+global: 25r/s
 withCallerID: 3r/3s
 withoutCallerID: 2r/s
-global: 25r/s
-pathSelector: "equals:/login"
+pathSelectors:
+  - "equals:/login"
 ---
 name: LoginResource
+global: 150r/s
 withCallerID: 12r/3s
 withoutCallerID: 6r/s
-global: 150r/s
 pathSelectors: 
   - "startsWith:/resources/"
   - "startsWith:/vendor/"
 ---
 name: LoginDo
+global: 25r/s
 withCallerID: 1r/s
 withoutCallerID: 2r/s
-global: 25r/s
 pathSelectors: 
   - "equals:/login.do"
 ---
 name: EverythingElse
+global: 250r/s
 withCallerID: 50r/s
 withoutCallerID: 25r/s
-global: 250r/s
 pathSelectors: 
   - "other"
 ---
 name: ALL
+global: 1000r/s
 withCallerID: 80r/s
 withoutCallerID: 35r/s
-global: 1000r/s
 pathSelectors: 
   - "all"
