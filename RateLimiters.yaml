@@ -1,65 +1,67 @@
-credentialID: 'JWT:Claims+"email"\s*:\s*"(.*?)"'
+credentialId: 'JWT:Claims+"email"\s*:\s*"(.*?)"'
 ---
 name: Info
+withCallerRemoteAddressID: 1r/s
+withoutCallerID: 1r/2s
 global: 50r/s
-withCallerID: 2r/s
-withoutCallerID: 1r/s
-pathSelectors: 
+pathSelectors:
   - "equals:/info"
 ---
 name: Authenticate
-global: 50r/s
-withCallerID: 5r/s
+withCallerRemoteAddressID: 5r/s
 withoutCallerID: 10r/s
-pathSelectors: 
+global: 50r/s
+pathSelectors:
   - "equals:/authenticate"
 ---
 name: AuthToken
-global: 50r/s
-withCallerID: 2r/s
+withCallerRemoteAddressID: 2r/s
 withoutCallerID: 4r/s
-pathSelectors: 
+global: 50r/s
+pathSelectors:
   - "equals:/oauth/token"
 ---
 name: AuthAuthorize
-global: 25r/s
-withCallerID: 1r/s
+withCallerRemoteAddressID: 1r/s
 withoutCallerID: 2r/s
-pathSelectors: 
+global: 25r/s
+pathSelectors:
   - "equals:/oauth/authorize"
 ---
 name: LoginPage
-global: 25r/s
-withCallerID: 3r/3s
+withCallerRemoteAddressID: 3r/3s
 withoutCallerID: 2r/s
+global: 25r/s
 pathSelectors:
   - "equals:/login"
 ---
 name: LoginResource
-global: 150r/s
-withCallerID: 12r/3s
+withCallerRemoteAddressID: 12r/3s
 withoutCallerID: 6r/s
-pathSelectors: 
+global: 150r/s
+pathSelectors:
   - "startsWith:/resources/"
   - "startsWith:/vendor/"
 ---
 name: LoginDo
+withCallerRemoteAddressID: 2r/s
+withoutCallerID: 1r/s
 global: 25r/s
-withCallerID: 1r/s
-withoutCallerID: 2r/s
-pathSelectors: 
+pathSelectors:
   - "equals:/login.do"
 ---
 name: EverythingElse
-global: 250r/s
-withCallerID: 50r/s
+withCallerCredentialsID: 50r/s
+withCallerRemoteAddressID: 50r/s
 withoutCallerID: 25r/s
-pathSelectors: 
+global: 250r/s
+pathSelectors:
   - "other"
 ---
 name: ALL
-global: 1000r/s
-withCallerID: 80r/s
+withCallerCredentialsID: 80r/s
+withCallerRemoteAddressID: 80r/s
 withoutCallerID: 35r/s
-pathSelectors: 
+global: 1000r/s
+pathSelectors:
   - "all"
