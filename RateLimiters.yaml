@@ -1,8 +1,9 @@
+credentialId: 'JWT:Claims+"email"\s*:\s*"(.*?)"'
 ---
 name: Info
 global: 50r/s
 withCallerID: 2r/s
-withoutCallerID: 4r/s
+withoutCallerID: 1r/s
 pathSelectors: 
   - "equals:/info"
 ---
