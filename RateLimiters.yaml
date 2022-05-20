@@ -1,4 +1,4 @@
-credentialId: 'JWT:Claims+"email"\s*:\s*"(.*?)"'
+credentialID: 'JWT:Claims+"email"\s*:\s*"(.*?)"'
 ---
 name: Info
 withCallerRemoteAddressID: 1r/s
