@@ -1,5 +1,5 @@
 # loggingOption: AllCallsWithDetails
-loggingOption: AllCalls
+# loggingOption: AllCalls
 # loggingOption: OnlyLimited
 # OnlyLimited is the default
 ---
