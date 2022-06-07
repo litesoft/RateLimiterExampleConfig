@@ -1,7 +1,4 @@
 loggingOption: AllCallsWithDetails
-# loggingOption: AllCalls
-# loggingOption: OnlyLimited
-# OnlyLimited is the default
 ---
 credentialID: 'JWT:Claims+"email"\s*:\s*"(.*?)"'
 ---
