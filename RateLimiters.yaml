@@ -1,45 +1,72 @@
+loggingOption: AllCallsWithDetails
+# loggingOption: AllCalls
+# loggingOption: OnlyLimited
+# OnlyLimited is the default
+---
+credentialID: 'JWT:Claims+"email"\s*:\s*"(.*?)"'
 ---
 name: Info
-maxRequestsPerWindow: 2
-windowSecs: 1
-pathSelector: "equals:/info"
+withCallerRemoteAddressID: 1r/s
+withoutCallerID: 1r/2s
+global: 50r/s
+pathSelectors:
+  - "equals:/info"
 ---
 name: Authenticate
-maxRequestsPerWindow: 5
-windowSecs: 1
-pathSelector: "equals:/authenticate"
+withCallerRemoteAddressID: 5r/s
+withoutCallerID: 10r/s
+global: 50r/s
+pathSelectors:
+  - "equals:/authenticate"
 ---
 name: AuthToken
-maxRequestsPerWindow: 2
-windowSecs: 1
-pathSelector: "equals:/oauth/token"
+withCallerRemoteAddressID: 2r/s
+withoutCallerID: 4r/s
+global: 50r/s
+pathSelectors:
+  - "equals:/oauth/token"
 ---
 name: AuthAuthorize
-maxRequestsPerWindow: 1
-windowSecs: 1
-pathSelector: "equals:/oauth/authorize"
+withCallerRemoteAddressID: 1r/s
+withoutCallerID: 2r/s
+global: 25r/s
+pathSelectors:
+  - "equals:/oauth/authorize"
 ---
 name: LoginPage
-maxRequestsPerWindow: 3
-windowSecs: 3
-pathSelector: "equals:/login"
+withCallerRemoteAddressID: 3r/3s
+withoutCallerID: 2r/s
+global: 25r/s
+pathSelectors:
+  - "equals:/login"
 ---
 name: LoginResource
-maxRequestsPerWindow: 6
-windowSecs: 3
-pathSelector: "startsWith:/resources/"
----
-name: LoginVendor
-maxRequestsPerWindow: 6
-windowSecs: 3
-pathSelector: "startsWith:/vendor/"
+withCallerRemoteAddressID: 12r/3s
+withoutCallerID: 6r/s
+global: 150r/s
+pathSelectors:
+  - "startsWith:/resources/"
+  - "startsWith:/vendor/"
 ---
 name: LoginDo
-maxRequestsPerWindow: 1
-windowSecs: 1
-pathSelector: "equals:/login.do"
+withCallerRemoteAddressID: 2r/s
+withoutCallerID: 1r/s
+global: 25r/s
+pathSelectors:
+  - "equals:/login.do"
 ---
 name: EverythingElse
-maxRequestsPerWindow: 50
-windowSecs: 1
-pathSelector: "any:"
+withCallerCredentialsID: 50r/s
+withCallerRemoteAddressID: 50r/s
+withoutCallerID: 25r/s
+global: 250r/s
+pathSelectors:
+  - "other"
+---
+name: ALL
+withCallerCredentialsID: 80r/s
+withCallerRemoteAddressID: 80r/s
+withoutCallerID: 35r/s
+global: 1000r/s
+pathSelectors:
+  - "all"
