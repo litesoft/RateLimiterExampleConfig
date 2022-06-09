@@ -1,4 +1,4 @@
-# loggingOption: AllCallsWithDetails
+loggingOption: AllCallsWithDetails
 # and another comment
 ---
 credentialID: 'JWT:Claims+"email"\s*:\s*"(.*?)"'
