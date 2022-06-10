@@ -57,7 +57,6 @@ pathSelectors:
 name: EverythingElse
 withCallerCredentialsID: 50r/s
 withCallerRemoteAddressID: 50r/s
-withoutCallerID: 25r/s
 global: 250r/s
 pathSelectors:
   - "other"
@@ -65,7 +64,6 @@ pathSelectors:
 name: ALL
 withCallerCredentialsID: 80r/s
 withCallerRemoteAddressID: 80r/s
-withoutCallerID: 35r/s
 global: 1000r/s
 pathSelectors:
   - "all"
