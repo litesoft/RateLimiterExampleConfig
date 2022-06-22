@@ -4,14 +4,10 @@ loggingOption: AllCalls
 ---
 credentialID: 'JWT:Claims+"email"\s*:\s*"(.*?)"'
 ---
-name: OauthWellKnown-OpenID
-withCallerRemoteAddressID: 10r/s
-pathSelectors:
-  - "equals:/oauth/token/.well-known/openid-configuration"
----
 name: WellKnown-OpenID
 withCallerRemoteAddressID: 10r/s
 pathSelectors:
+  - "equals:/oauth/token/.well-known/openid-configuration"
   - "equals:/.well-known/openid-configuration"
 ---
 name: Info
