@@ -4,55 +4,68 @@ loggingOption: AllCalls
 ---
 credentialID: 'JWT:Claims+"email"\s*:\s*"(.*?)"'
 ---
+name: OauthWellKnown-OpenID
+withCallerRemoteAddressID: 10r/s
+pathSelectors:
+  - "equals:/oauth/token/.well-known/openid-configuration"
+---
+name: WellKnown-OpenID
+withCallerRemoteAddressID: 10r/s
+pathSelectors:
+  - "equals:/.well-known/openid-configuration"
+---
 name: Info
-withCallerRemoteAddressID: 1r/s
-withoutCallerID: 1r/2s
-global: 50r/s
+withCallerRemoteAddressID: 10r/s
 pathSelectors:
   - "equals:/info"
 ---
-name: Authenticate
-withCallerRemoteAddressID: 5r/s
-withoutCallerID: 10r/s
-global: 50r/s
+name: Root
+withCallerRemoteAddressID: 10r/s
 pathSelectors:
-  - "equals:/authenticate"
----
-name: AuthToken
-withCallerRemoteAddressID: 2r/s
-withoutCallerID: 4r/s
-global: 50r/s
-pathSelectors:
-  - "equals:/oauth/token"
----
-name: AuthAuthorize
-withCallerRemoteAddressID: 1r/s
-withoutCallerID: 2r/s
-global: 25r/s
-pathSelectors:
-  - "equals:/oauth/authorize"
+  - "equals:/"
 ---
 name: LoginPage
-withCallerRemoteAddressID: 3r/3s
-withoutCallerID: 2r/s
-global: 25r/s
+withCallerRemoteAddressID: 30r/3s
 pathSelectors:
   - "equals:/login"
 ---
 name: LoginResource
-withCallerRemoteAddressID: 12r/3s
-withoutCallerID: 6r/s
-global: 150r/s
+withCallerRemoteAddressID: 180r/3s
 pathSelectors:
   - "startsWith:/resources/"
   - "startsWith:/vendor/"
 ---
 name: LoginDo
-withCallerRemoteAddressID: 2r/s
-withoutCallerID: 1r/s
-global: 25r/s
+withCallerRemoteAddressID: 30r/3s
 pathSelectors:
   - "equals:/login.do"
+---
+name: LogoutDo
+withCallerRemoteAddressID: 20r/s
+pathSelectors:
+  - "startsWith:/logout.do"
+---
+name: EmailSent
+withCallerRemoteAddressID: 20r/s
+pathSelectors:
+  - "equals:/email_sent"
+  - "equals:/accounts/email_sent"
+---
+name: AuthAuthorize
+withCallerRemoteAddressID: 20r/s
+pathSelectors:
+  - "startsWith:/oauth/authorize"
+---
+name: AuthToken
+withCallerRemoteAddressID: 10r/s
+pathSelectors:
+  - "equals:/oauth/token"
+---
+name: Token_key(s)
+withCallerRemoteAddressID: 20r/s
+pathSelectors:
+  - "equals:/token_key"
+  - "equals:/token_keys"
 ---
 name: EverythingElse
 withCallerCredentialsID: 50r/s
@@ -60,10 +73,3 @@ withCallerRemoteAddressID: 50r/s
 global: 250r/s
 pathSelectors:
   - "other"
----
-name: ALL
-withCallerCredentialsID: 80r/s
-withCallerRemoteAddressID: 80r/s
-global: 1000r/s
-pathSelectors:
-  - "all"
