@@ -5,7 +5,7 @@
 credentialID: 'JWT:Claims+"email"\s*:\s*"(.*?)"'
 ---
 name: WellKnown-OpenID
-withCallerRemoteAddressID: 33r/s
+withCallerRemoteAddressID: 3r/s
 pathSelectors:
   - "equals:/oauth/token/.well-known/openid-configuration"
   - "equals:/.well-known/openid-configuration"
