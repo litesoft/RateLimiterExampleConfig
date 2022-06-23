@@ -1,11 +1,11 @@
 # loggingOption: AllCallsWithDetails
-loggingOption: AllCalls
-# and another comment
+# loggingOption: AllCalls
+# the default option is Limited Only
 ---
 credentialID: 'JWT:Claims+"email"\s*:\s*"(.*?)"'
 ---
 name: WellKnown-OpenID
-withCallerRemoteAddressID: 3r/s
+withCallerRemoteAddressID: 33r/s
 pathSelectors:
   - "equals:/oauth/token/.well-known/openid-configuration"
   - "equals:/.well-known/openid-configuration"
