@@ -1,8 +1,9 @@
 # loggingOption: AllCallsWithDetails
-# loggingOption: AllCalls
+loggingOption: AllCalls
 # the default option is Limited Only
 ---
-credentialID: 'JWT:Claims+"email"\s*:\s*"(.*?)"'
+# credentialID: 'JWT:Claims+"email"\s*:\s*"(.*?)"'
+credentialID: 'JWTjsonField:Claims:email'
 ---
 name: WellKnown-OpenID
 withCallerRemoteAddressID: 3r/s
