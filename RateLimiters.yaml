@@ -4,7 +4,7 @@ loggingOption: AllCalls
 #loggingOption: OnlyLimited
 # OnlyLimited is the default
 
-credentialID: 'JWTjsonField:Claims:email'
+credentialID: 'JWT:Claims'
 
 limiterMappings:
   - name: Info
